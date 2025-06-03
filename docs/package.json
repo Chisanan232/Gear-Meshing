@@ -29,8 +29,7 @@
     "@docusaurus/types": "3.8.0",
     "remark-mdx-code-meta": "^2.0.0",
     "remark-mdx-disable-explicit-jsx": "^0.1.0",
-    "typescript": "~5.6.2",
-    "unist-util-visit": "^5.0.0"
+    "typescript": "~5.6.2"
   },
   "browserslist": {
     "production": [
