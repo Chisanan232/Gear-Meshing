@@ -41,7 +41,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           editUrl:
-            'https://github.com/Chisanan232/Engineering-AI-Agent/tree/main/docs/',
+            'https://github.com/Chisanan232/Engineering-AI-Agent/tree/master/docs/',
           remarkPlugins: [
             remarkMdxCodeMeta,
           ],
@@ -57,7 +57,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           editUrl:
-            'https://github.com/Chisanan232/Engineering-AI-Agent/tree/main/docs/',
+            'https://github.com/Chisanan232/Engineering-AI-Agent/tree/master/docs/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
