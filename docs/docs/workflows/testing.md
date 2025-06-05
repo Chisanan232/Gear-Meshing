@@ -301,3 +301,5 @@ Example verification workflow:
    - Automated tests verify the fix
    - QA agent confirms resolution
    - Bug marked as fixed
+
+</MDXContent>

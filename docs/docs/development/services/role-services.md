@@ -620,12 +620,11 @@ async def test_generate_code():
     llm_client = AsyncMock()
     llm_client.generate.return_value = """
     Here's the implementation:
-    
-    ```python
+```python
     def calculate_total(items):
         return sum(item.price for item in items)
     ```
-    """
+"""
     
     repository = AsyncMock()
     knowledge_base = AsyncMock()
@@ -702,7 +701,8 @@ async def test_task_processing_flow():
         2. Add unit tests""",
         
         # RD Service response for code generation
-        """```python
+        """
+```python
         def calculate_total(items):
             return sum(item.price for item in items)
         ```"""
@@ -753,11 +753,9 @@ async def test_task_processing_flow():
     )
     assert "def calculate_total(items):" in code_content
 ```
-
 ## Deployment Configuration
 
 ### Kubernetes Deployment
-
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -814,7 +812,6 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 5
 ```
-
 ## Scaling Considerations
 
 Role Services can be scaled independently based on workload:
@@ -845,7 +842,7 @@ Role Services can be scaled independently based on workload:
    - PostgreSQL (for task storage)
 
 2. **Environment Setup**
-   ```bash
+```bash
    # Clone the repository
    git clone https://github.com/your-org/engineering-ai-agent.git
    cd engineering-ai-agent/services/rd-service
@@ -861,9 +858,8 @@ Role Services can be scaled independently based on workload:
    # Setup pre-commit hooks
    pre-commit install
    ```
-
 3. **Configuration**
-   ```bash
+```bash
    # Copy example environment file
    cp .env.example .env
    
@@ -874,9 +870,7 @@ Role Services can be scaled independently based on workload:
    # Run the service
    uvicorn app.main:app --reload
    ```
-
 ### Code Organization
-
 ```
 role-service/
 ├── app/
@@ -940,7 +934,6 @@ role-service/
 ├── requirements.txt            # Production dependencies
 └── requirements-dev.txt        # Development dependencies
 ```
-
 ### Best Practices
 
 1. **Code Quality**
@@ -998,22 +991,19 @@ role-service/
 ### Debugging Techniques
 
 1. **Enable Debug Logging**
-   ```bash
+```bash
    export LOG_LEVEL=debug
    ```
-
 2. **Trace LLM Interactions**
-   ```bash
+```bash
    export TRACE_LLM_CALLS=true
    ```
-
 3. **Inspect Event Flow**
-   ```bash
+```bash
    export TRACE_EVENTS=true
    ```
-
 4. **Manual Task Testing**
-   ```bash
+```bash
    # Using the API directly
    curl -X POST http://localhost:8000/tasks/process \
      -H "Content-Type: application/json" \

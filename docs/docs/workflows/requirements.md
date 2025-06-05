@@ -159,8 +159,8 @@ This workflow integrates with:
 
 1. **Stakeholder Request**:
    ```
-   "We need a feature to allow users to export their data in various formats (CSV, PDF, JSON)."
-   ```
+"We need a feature to allow users to export their data in various formats (CSV, PDF, JSON)."
+```
 
 2. **PM Analysis**:
    - Clarifies which data should be exportable
@@ -183,3 +183,5 @@ This workflow integrates with:
    - Code reviewed and approved
    - Feature tested against acceptance criteria
    - Task moved to "Complete" and then "Closed"
+
+</MDXContent>

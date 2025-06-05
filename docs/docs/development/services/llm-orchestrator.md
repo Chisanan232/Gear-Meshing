@@ -322,7 +322,8 @@ class PromptTemplate:
   "template_id": "code_generation",
   "version": "1.0",
   "system_message": "You are an expert software developer with deep knowledge of software engineering principles, design patterns, and best practices. Your task is to generate high-quality, maintainable, and efficient code based on the requirements provided.",
-  "user_message_template": "Please write code for the following requirement:\n\n{{ requirement }}\n\n{% if language %}Use {{ language }} programming language.{% endif %}\n\n{% if existing_code %}Here is some relevant existing code:\n\n```{{ language }}\n{{ existing_code }}\n```{% endif %}\n\n{% if coding_standards %}Follow these coding standards:\n{{ coding_standards }}{% endif %}\n\nThe code should be well-structured, include error handling, and be fully documented with comments.",
+  "user_message_template": "Please write code for the following requirement:\n\n{{ requirement }}\n\n{% if language %}Use {{ language }} programming language.{% endif %}\n\n{% if existing_code %}Here is some relevant existing code:\n\n
+```{{ language }}\n{{ existing_code }}\n```{% endif %}\n\n{% if coding_standards %}Follow these coding standards:\n{{ coding_standards }}{% endif %}\n\nThe code should be well-structured, include error handling, and be fully documented with comments.",
   "required_variables": ["requirement"],
   "optional_variables": {
     "language": "python",
@@ -336,13 +337,11 @@ class PromptTemplate:
   }
 }
 ```
-
 ### Context Manager
 
 The Context Manager is responsible for building and managing context for LLM requests.
 
 #### Context Building
-
 ```mermaid
 sequenceDiagram
     participant Service as Role Service
@@ -366,9 +365,7 @@ sequenceDiagram
     ContextMgr-->>Orchestrator: Optimized context
     Orchestrator->>Orchestrator: Merge with prompt
 ```
-
 #### Context Pruning Strategies
-
 ```python
 class BasePruningStrategy:
     """Base class for context pruning strategies."""
@@ -461,13 +458,11 @@ class HybridPruningStrategy(BasePruningStrategy):
                 
         return pruned_items
 ```
-
 ### Response Handler
 
 The Response Handler processes responses from LLMs and extracts structured data when needed.
 
 #### Response Processing
-
 ```python
 class ResponseHandler:
     """Handle responses from LLM providers."""
@@ -1234,7 +1229,7 @@ spec:
 
 2. **Environment Setup**
    ```bash
-   # Clone the repository
+# Clone the repository
    git clone https://github.com/your-org/engineering-ai-agent.git
    cd engineering-ai-agent/services/llm-orchestrator
    
@@ -1248,11 +1243,11 @@ spec:
    
    # Setup pre-commit hooks
    pre-commit install
-   ```
+```
 
 3. **Configuration**
    ```bash
-   # Copy example environment file
+# Copy example environment file
    cp .env.example .env
    
    # Edit .env file with your API keys and configuration
@@ -1261,7 +1256,7 @@ spec:
    
    # Run the service
    uvicorn app.main:app --reload
-   ```
+```
 
 ### Code Organization
 
@@ -1391,27 +1386,27 @@ llm-orchestrator/
 
 1. **Enable Debug Logging**
    ```bash
-   export LOG_LEVEL=debug
-   ```
+export LOG_LEVEL=debug
+```
 
 2. **Trace Requests**
    ```bash
-   # Set request tracing
+# Set request tracing
    export TRACE_REQUESTS=true
-   ```
+```
 
 3. **Analyze Token Usage**
    ```bash
-   # Enable token usage logging
+# Enable token usage logging
    export LOG_TOKEN_USAGE=true
-   ```
+```
 
 4. **Inspect Prompt Templates**
    ```bash
-   # Using the API directly
+# Using the API directly
    curl -X GET http://localhost:8000/debug/templates/{template_id} \
      -H "Content-Type: application/json"
-   ```
+```
 
 ## Future Enhancements
 

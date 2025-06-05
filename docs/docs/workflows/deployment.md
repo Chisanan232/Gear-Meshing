@@ -333,3 +333,5 @@ The system follows semantic versioning (SemVer):
    - System is monitored for anomalies
    - Success or issues are communicated to the team
    - Lessons learned are documented for future deployments
+
+</MDXContent>

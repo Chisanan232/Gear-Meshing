@@ -674,7 +674,7 @@ spec:
 
 2. **Environment Setup**
    ```bash
-   # Clone the repository
+# Clone the repository
    git clone https://github.com/your-org/engineering-ai-agent.git
    cd engineering-ai-agent/api-gateway
    
@@ -688,11 +688,11 @@ spec:
    
    # Setup pre-commit hooks
    pre-commit install
-   ```
+```
 
 3. **Configuration**
    ```bash
-   # Copy example environment file
+# Copy example environment file
    cp .env.example .env
    
    # Edit .env file with your local configuration
@@ -701,7 +701,7 @@ spec:
    
    # Run the API Gateway
    uvicorn app.main:app --reload
-   ```
+```
 
 ### Code Structure
 
@@ -874,20 +874,20 @@ def test_routing(endpoint, expected_service, mocker):
 
 1. **Enable Debug Logging**
    ```bash
-   export LOG_LEVEL=debug
-   ```
+export LOG_LEVEL=debug
+```
 
 2. **Inspect Request/Response**
    ```bash
-   # Add to .env
+# Add to .env
    TRACE_REQUESTS=true
-   ```
+```
 
 3. **Profile Performance**
    ```bash
-   # Run with profiling
+# Run with profiling
    python -m cProfile -o api_gateway.prof app/main.py
    
    # Analyze results
    python -m pstats api_gateway.prof
-   ```
+```

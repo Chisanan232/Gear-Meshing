@@ -153,27 +153,27 @@ The framework implements structured chain-of-thought prompting patterns to impro
 
 1. **Decomposition Pattern**
    ```
-   1. Break down the problem into sub-problems
+1. Break down the problem into sub-problems
    2. Solve each sub-problem independently
    3. Synthesize the solutions into a coherent whole
    4. Verify the combined solution against the original problem
-   ```
+```
 
 2. **Comparative Analysis Pattern**
    ```
-   1. Consider multiple approaches to the problem
+1. Consider multiple approaches to the problem
    2. Analyze the trade-offs of each approach
    3. Select the most appropriate approach based on criteria
    4. Implement the selected approach
-   ```
+```
 
 3. **Refinement Pattern**
    ```
-   1. Generate an initial solution
+1. Generate an initial solution
    2. Identify weaknesses or limitations
    3. Refine the solution to address the limitations
    4. Repeat until the solution meets quality thresholds
-   ```
+```
 
 ## Context Management
 

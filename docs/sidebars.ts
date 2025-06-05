@@ -9,7 +9,8 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  The sidebars can be generated from the filesystem, or explicitly defined here.
  */
 const sidebars: SidebarsConfig = {
-  tutorialSidebar: [
+  // Main documentation sidebar
+  docs: [
     'intro',
     'getting-started',
     {

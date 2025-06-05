@@ -128,8 +128,8 @@ To verify that your agent is running correctly:
 
 1. Send a message in one of your configured Slack channels mentioning the agent:
    ```
-   @engineering-agent hello
-   ```
+@engineering-agent hello
+```
 
 2. The agent should respond with an introduction message and available commands.
 

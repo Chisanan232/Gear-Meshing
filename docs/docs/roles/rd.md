@@ -143,3 +143,7 @@ The RD role integrates with:
 - **Slack**: For communication and task notifications
 - **GitHub**: For code management and pull requests
 - **JIRA/ClickUp**: For task tracking and management
+
+    </>
+  );
+})()}</div>

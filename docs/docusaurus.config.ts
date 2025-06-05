@@ -1,29 +1,22 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkGfm from 'remark-gfm';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 
 const config: Config = {
   title: 'Engineering AI Agent',
-  tagline: 'AI Agents for Software Engineering Roles',
+  tagline: 'AI-powered software development assistance',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
-
   // Set the production url of your site here
-  url: 'https://engineering-ai-agent.example.com',
+  url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  organizationName: 'Chisanan232', // Usually your GitHub org/user name.
-  projectName: 'Engineering-AI-Agent', // Usually your repo name.
-
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  onDuplicateRoutes: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -33,36 +26,33 @@ const config: Config = {
     locales: ['en'],
   },
 
+  markdown: {
+    mermaid: true,
+    format: 'detect',
+    mdx1Compat: {
+      comments: true,
+      admonitions: true,
+      headingIds: true,
+    },
+  },
+
   presets: [
     [
       'classic',
       {
         docs: {
+          path: 'docs',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
           editUrl:
             'https://github.com/Chisanan232/Engineering-AI-Agent/tree/master/docs/',
-          remarkPlugins: [
-            remarkMdxCodeMeta,
-          ],
+          routeBasePath: '/',
+          remarkPlugins: [remarkGfm, remarkMdxCodeMeta],
           rehypePlugins: [],
           beforeDefaultRemarkPlugins: [],
-          beforeDefaultRehypePlugins: [],
+          showLastUpdateTime: true,
+          include: ['**/*.{md,mdx}'],
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/Chisanan232/Engineering-AI-Agent/tree/master/docs/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -70,27 +60,7 @@ const config: Config = {
     ],
   ],
 
-  plugins: [
-    [
-      'content-docs',
-      /** @type {import('@docusaurus/plugin-content-docs').Options} */
-      {
-        id: 'development',
-        path: 'docs/development',
-        routeBasePath: 'development',
-        sidebarPath: require.resolve('./sidebars-dev.js'),
-        // Only display if user is authenticated via GitHub
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        remarkPlugins: [
-          remarkMdxCodeMeta,
-        ],
-        rehypePlugins: [],
-        beforeDefaultRemarkPlugins: [],
-        beforeDefaultRehypePlugins: [],
-      },
-    ],
-  ],
+  plugins: [],
 
   themeConfig: {
     // Replace with your project's social card
@@ -98,23 +68,16 @@ const config: Config = {
     navbar: {
       title: 'Engineering AI Agent',
       logo: {
-        alt: 'Engineering AI Agent Logo',
+        alt: 'My Site Logo',
         src: 'img/logo.svg',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docs',
           position: 'left',
           label: 'Documentation',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'developmentSidebar',
-          position: 'left',
-          label: 'Development',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/Chisanan232/Engineering-AI-Agent',
           label: 'GitHub',
@@ -129,12 +92,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Introduction',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Getting Started',
-              to: '/docs/getting-started',
+              label: 'Documentation',
+              to: '/',
             },
           ],
         },
@@ -146,18 +105,14 @@ const config: Config = {
               href: 'https://github.com/Chisanan232/Engineering-AI-Agent/issues',
             },
             {
-              label: 'GitHub Discussions',
-              href: 'https://github.com/Chisanan232/Engineering-AI-Agent/discussions',
+              label: 'Pull Requests',
+              href: 'https://github.com/Chisanan232/Engineering-AI-Agent/pulls',
             },
           ],
         },
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/Chisanan232/Engineering-AI-Agent',

@@ -23,33 +23,33 @@ Before you begin, make sure you have the following installed:
 
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/Engineering-AI-Agent.git
+git clone https://github.com/YOUR-USERNAME/Engineering-AI-Agent.git
    cd Engineering-AI-Agent
-   ```
+```
 
 3. Add the upstream repository as a remote:
    ```bash
-   git remote add upstream https://github.com/Chisanan232/Engineering-AI-Agent.git
-   ```
+git remote add upstream https://github.com/Chisanan232/Engineering-AI-Agent.git
+```
 
 ### Set Up Development Environment
 
 1. Create and activate a virtual environment:
    ```bash
-   python -m venv venv
+python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+```
 
 2. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+pip install -r requirements.txt
    pip install -r requirements-dev.txt
-   ```
+```
 
 3. Set up pre-commit hooks:
    ```bash
-   pre-commit install
-   ```
+pre-commit install
+```
 
 ## Development Workflow
 
@@ -73,27 +73,27 @@ Use a descriptive name for your branch that reflects the changes you're making:
 2. Write or update tests for your changes.
 3. Ensure all tests pass by running:
    ```bash
-   pytest
-   ```
+pytest
+```
 
 4. Make sure your code follows our style guidelines:
    ```bash
-   flake8
+flake8
    black .
    isort .
-   ```
+```
 
 ### Commit Your Changes
 
 1. Stage your changes:
    ```bash
-   git add .
-   ```
+git add .
+```
 
 2. Commit with a descriptive message following our commit message convention:
    ```bash
-   git commit -m "type(scope): brief description"
-   ```
+git commit -m "type(scope): brief description"
+```
 
    Types include:
    - `feat`: A new feature
@@ -108,8 +108,8 @@ Use a descriptive name for your branch that reflects the changes you're making:
 
 3. Push your changes to your fork:
    ```bash
-   git push origin feature/your-feature-name
-   ```
+git push origin feature/your-feature-name
+```
 
 ### Open a Pull Request
 
@@ -252,8 +252,8 @@ To test the entire system locally:
 1. Configure mock services for external integrations
 2. Set up a local development environment using docker-compose:
    ```bash
-   docker-compose -f docker-compose.dev.yml up
-   ```
+docker-compose -f docker-compose.dev.yml up
+```
 3. Test role interactions using the provided test scripts
 
 ## Release Process
