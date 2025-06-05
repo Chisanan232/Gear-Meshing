@@ -79,6 +79,12 @@ const config: Config = {
           label: 'Documentation',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'development',
+          position: 'left',
+          label: 'Development',
+        },
+        {
           href: 'https://github.com/Chisanan232/Engineering-AI-Agent',
           label: 'GitHub',
           position: 'right',
