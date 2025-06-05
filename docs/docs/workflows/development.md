@@ -240,5 +240,3 @@ Example: `feat(auth): implement JWT token generation (AUTH-123)`
    - PR approved and merged
    - Changes JIRA status to "Complete"
    - Updates documentation if needed
-
-</MDXContent>
