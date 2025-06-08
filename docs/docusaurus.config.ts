@@ -51,6 +51,17 @@ const config: Config = {
           beforeDefaultRemarkPlugins: [],
           showLastUpdateTime: true,
           include: ['**/*.{md,mdx}'],
+          lastVersion: 'current',
+          onlyIncludeVersions: ['current', '0.1.0'],
+          versions: {
+            current: {
+              label: 'Next',
+            },
+            '0.1.0': {
+              label: '0.1.0',
+              banner: 'none',
+            },
+          },
         },
         blog: false,
         theme: {
@@ -87,6 +98,20 @@ const config: Config = {
           sidebarId: 'development',
           position: 'left',
           label: 'Development',
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownItemsAfter: [
+            {
+              type: 'html',
+              value: '<hr class="dropdown-separator">',
+            },
+            {
+              to: '/versions',
+              label: 'All versions',
+            },
+          ],
         },
         {
           href: 'https://github.com/Chisanan232/Engineering-AI-Agent',
