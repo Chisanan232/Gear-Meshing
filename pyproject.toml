@@ -3,15 +3,15 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [project]
-name = "<your lib name>"
+name = "gear-meshing"
 version = "0.0.0"
-description = "👨‍💻 A clear brief for your library."
+description = "🤖 A system with multiple AI agents as different roles like RD (research & develop) to collaborate with each others to develop one or more production(s)."
 authors = [
-    { name = "<Your name>", email = "<Your e-mail address>" }
+    { name = "Chisanan232", email = "chi10211201@cycu.org.tw"}
 ]
-license = { file = "LICENSE" }
+license = {text = "MIT"}
 readme = "README.md"
-keywords = ["the keywords for your lib"]
+keywords = ["ai", "ai agents", "ai-assistents"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -20,20 +20,24 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 requires-python = ">=3.12"
 dependencies = []
 
 [tool.poetry]
 packages = [
-    { include = "<Your library source code folder>" },
+    { include = "gear_meshing/" },
 ]
 
 [project.urls]
-Homepage = "<home page of your repo or documentation, up to you>"
-Documentation = "<the documentation host URL of your lib>"
-Repository = "https://github.com/<your username>/<your repository>"
-Changelog = "<the release note page in documentation or GitHub release info>"
+Homepage = "https://github.com/Chisanan232/Gear-Meshing"
+#Documentation = "<the documentation host URL of your lib>"
+Repository = "https://github.com/Chisanan232/Gear-Meshing"
+#Changelog = "<the release note page in documentation or GitHub release info>"
+"Project Management" = "https://app.clickup.com/9018752317/v/f/90185307863/90182761188"
 
 # TODO: Let the dependencies for development to be optional
 #[tool.poetry.group.dev]
