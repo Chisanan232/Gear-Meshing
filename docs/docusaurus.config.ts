@@ -65,7 +65,7 @@ const config: Config = {
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './gear_meshing/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
