@@ -47,7 +47,7 @@ jobs:
           version: 10
 
       - name: Install dependencies
-        run: pnpm install --force
+        run: pnpm install
 
       - name: Build website
         run: pnpm build
