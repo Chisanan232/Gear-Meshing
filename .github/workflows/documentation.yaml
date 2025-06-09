@@ -4,16 +4,16 @@ on:
   push:
     branches:
 #      - "develop/**"    # For testing
-      - "sample_master_never_run"
+      - "master"
     paths:
 #     Documentation
 #     Doc - CI workflow
       - ".github/workflows/documentation.yaml"
       - "scripts/ci/**documentation**.sh"
 #     Doc - Content
-      - "docs/**/*.md"
-#     Doc - MkDoc config
-      - "mkdocs.yml"
+      - "docs/**/*"
+      - "!docs/README.md"
+      - "!docs/.gitignore"
 #     Python source code package info
       - "**/__pkg_info__.py"
 
@@ -29,7 +29,8 @@ permissions:
   pages: write
 
 jobs:
-  deploy_latest_documentation:
+  build:
+    name: Build Docusaurus
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,93 +38,38 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install Python 3.13
-        uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.13"
+          node-version: 22
+          cache: pnpm
 
-      - name: Install Python dependencies about Poetry
-        run: |
-          python3 -m pip install --upgrade pip
-          pip3 install -U pip
-          pip install -U poetry
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: Build Python runtime environment and dependencies by Poetry
-        run: |
-          poetry --version
-          poetry install --with docs
+      - name: Build website
+        run: pnpm build
 
-      # build and commit documentation with versioning
-      - name: Build versioning documentation
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          echo "Documentation tool version info:"
-          poetry run mkdocs --version
-          poetry run mike --version
-          bash ./scripts/ci/deploy-latest-version-documentation.sh
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
 
-  check_version-state:
-#    name: Check the version update state
-    uses: ./.github/workflows/rw_checking_deployment_state.yaml
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
 
-  check_version_info:
-#    name: Check the package version info to make sure whether it should release Docker image or not.
-    needs: check_version-state
-    if: ${{ needs.check_version-state.outputs.version_update_state == 'VERSION UPDATE' }}
-    uses: Chisanan232/GitHub-Action_Reusable_Workflows-Python/.github/workflows/rw_build_git-tag_and_create_github-release.yaml@v7.3
-    secrets:
-      github_auth_token: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      project_type: python-package
-      project_name: fake_api_server
-      software_version_format: general-3
-      debug_mode: true
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
 
-  deploy_stable_documentation:
-    needs: check_version_info
-    if: ${{ needs.check_version_info.outputs.python_release_version == 'Official-Release' }}
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Install Python 3.12
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install Python dependencies about Poetry
-        run: |
-          python3 -m pip install --upgrade pip
-          pip3 install -U pip
-          pip install -U poetry
-
-      - name: Build Python runtime environment and dependencies by Poetry
-        run: |
-          poetry --version
-          poetry install --with docs
-
-      # build and commit documentation with versioning
-      - name: Build versioning documentation
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          echo "Documentation tool version info:"
-          poetry run mkdocs --version
-          poetry run mike --version
-          bash ./scripts/ci/deploy-stable-version-documentation.sh \
-               -r '${{ env.RELEASE_TYPE }}' \
-               -p '${{ env.PYTHON_PACKAGE_NAME }}' \
-               -v '${{ env.SOFTWARE_VERSION_FORMAT }}' \
-#               -d '${{ env.RUNNING_MODE }}'
-
-#      # general build and deploy documentation to GitHub Page
-#      - name: Deploy documentation
-#        env:
-#          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-#        run: |
-#          poetry run mkdocs gh-deploy --clean --force --ignore-version
-#          poetry run mkdocs --version
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
