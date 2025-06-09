@@ -10,9 +10,12 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://chisanan232.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
+  projectName: 'chisanan232.github.io',
+  organizationName: 'chisanan232',
+  trailingSlash: false,
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
