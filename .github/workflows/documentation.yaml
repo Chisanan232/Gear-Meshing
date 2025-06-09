@@ -41,10 +41,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          node-version: 22
-          cache: pnpm
+          version: 10
 
       - name: Install dependencies
         run: pnpm install
