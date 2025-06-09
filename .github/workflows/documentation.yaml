@@ -52,10 +52,13 @@ jobs:
       - name: Build website
         run: pnpm build
 
+      - name: Check the build directory exist or not
+        run: ls -la | grep 'build'
+
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: ./build
 
   deploy:
     name: Deploy to GitHub Pages
