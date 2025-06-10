@@ -7,7 +7,7 @@ import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 const config: Config = {
   title: 'Engineering AI Agent',
   tagline: 'AI-powered software development assistance',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/GearMeshing-AI_logo.png',
 
   // Set the production url of your site here
   url: 'https://chisanan232.github.io',
@@ -82,12 +82,12 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/GearMeshing-AI_logo.png',
     navbar: {
       title: 'Engineering AI Agent',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/GearMeshing-AI_logo.png',
       },
       items: [
         {
