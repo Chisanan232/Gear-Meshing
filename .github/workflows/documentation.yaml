@@ -61,7 +61,7 @@ jobs:
         uses: actions/cache@v3
         id: docusaurus-cache
         with:
-          path: ./.docusaurus
+          path: ./docs/.docusaurus
           key: ${{ runner.os }}-docusaurus-${{ hashFiles('./docs/**', '!./docs/.gitignore', '!./docs/package.json', '!./docs/pnpm-lock.yaml', '!./docs/README.md') }}
           restore-keys: ${{ runner.os }}-docusaurus-
 
