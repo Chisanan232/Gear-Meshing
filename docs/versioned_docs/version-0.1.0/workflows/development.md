@@ -91,7 +91,7 @@ Example Git workflow:
 git checkout -b feature/AUTH-123-user-authentication
 
 # Make changes and commit iteratively
-git add gear_meshing/auth/controller.py
+git add gearmeshing_ai/auth/controller.py
 git commit -m "feat(auth): create authentication controller (AUTH-123)"
 
 git add tests/auth/test_controller.py

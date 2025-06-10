@@ -584,7 +584,7 @@ graph TD
   "data": {
     "task_id": "task_123456",
     "project_id": "proj_654321",
-    "file_path": "gear_meshing/components/user_service.py",
+    "file_path": "gearmeshing_ai/components/user_service.py",
     "language": "python",
     "lines_of_code": 120,
     "status": "success"

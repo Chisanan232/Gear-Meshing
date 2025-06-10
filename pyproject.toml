@@ -3,9 +3,9 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [project]
-name = "gear-meshing"
+name = "gearmeshing-ai"
 version = "0.0.0"
-description = "🤖 A system with multiple AI agents as different roles like RD (research & develop) to collaborate with each others to develop one or more production(s)."
+description = "🤖 A highly self-hostable AI-powered software engineering platform that plugs autonomous developer agents into your workflow."
 authors = [
     { name = "Chisanan232", email = "chi10211201@cycu.org.tw"}
 ]
@@ -29,7 +29,7 @@ dependencies = []
 
 [tool.poetry]
 packages = [
-    { include = "gear_meshing/" },
+    { include = "gearmeshing_ai/" },
 ]
 
 [project.urls]
