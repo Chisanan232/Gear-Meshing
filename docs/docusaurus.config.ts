@@ -12,7 +12,7 @@ const config: Config = {
   // Set the production url of your site here
   url: 'https://chisanan232.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/',
+  baseUrl: '/gearmeshing-ai/',
   projectName: 'chisanan232.github.io',
   organizationName: 'chisanan232',
   trailingSlash: false,
