@@ -6,7 +6,7 @@ import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 
 const config: Config = {
   title: 'GearMeshing-AI',
-  tagline: 'AI-powered software development assistance',
+  tagline: 'A highly self-hostable AI-powered software engineering platform that plugs autonomous developer agents into your workflow.',
   favicon: 'img/GearMeshing-AI_logo.png',
 
   // Set the production url of your site here
