@@ -56,6 +56,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Cache Docusaurus build cache
+        uses: actions/cache@v3
+        id: docusaurus-cache
+        with:
+          path: ./.docusaurus
+          key: ${{ runner.os }}-docusaurus-${{ hashFiles('**', '!.gitignore', '!package.json', '!pnpm-lock.yaml', '!README.md') }}
+          restore-keys: ${{ runner.os }}-docusaurus-
+
       - name: Build website
         run: pnpm build
 
