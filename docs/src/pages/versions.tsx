@@ -25,14 +25,14 @@ export default function VersionsPage() {
       name: 'current',
       label: 'Next',
       // Current version is at root
-      path: '/',
+      path: '/intro',
       isLast: false,
     },
     {
       name: '0.1.0',
       label: '0.1.0',
       // In Docusaurus, versions are accessible by just their version name
-      path: '/0.1.0',
+      path: '/0.1.0/intro',
       isLast: true,
     },
   ];
