@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 
 const config: Config = {
-  title: 'Engineering AI Agent',
+  title: 'GearMeshing-AI',
   tagline: 'AI-powered software development assistance',
   favicon: 'img/GearMeshing-AI_logo.png',
 
@@ -47,7 +47,7 @@ const config: Config = {
           path: 'docs',
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/Chisanan232/Engineering-AI-Agent/tree/master/docs/',
+            'https://github.com/Chisanan232/GearMeshing-AI/tree/master/docs/',
           routeBasePath: '/',
           remarkPlugins: [remarkGfm, remarkMdxCodeMeta],
           rehypePlugins: [],
@@ -84,7 +84,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/GearMeshing-AI_logo.png',
     navbar: {
-      title: 'Engineering AI Agent',
+      title: 'GearMeshing-AI',
       logo: {
         alt: 'My Site Logo',
         src: 'img/GearMeshing-AI_logo.png',
@@ -117,7 +117,7 @@ const config: Config = {
           ],
         },
         {
-          href: 'https://github.com/Chisanan232/Engineering-AI-Agent',
+          href: 'https://github.com/Chisanan232/GearMeshing-AI',
           label: 'GitHub',
           position: 'right',
         },
@@ -140,11 +140,11 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Issues',
-              href: 'https://github.com/Chisanan232/Engineering-AI-Agent/issues',
+              href: 'https://github.com/Chisanan232/GearMeshing-AI/issues',
             },
             {
               label: 'Pull Requests',
-              href: 'https://github.com/Chisanan232/Engineering-AI-Agent/pulls',
+              href: 'https://github.com/Chisanan232/GearMeshing-AI/pulls',
             },
           ],
         },
@@ -153,12 +153,12 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/Chisanan232/Engineering-AI-Agent',
+              href: 'https://github.com/Chisanan232/GearMeshing-AI',
             },
           ],
         },
       ],
-      copyright: `Copyright ${new Date().getFullYear()} Engineering AI Agent Project. Built with Docusaurus.`,
+      copyright: `Copyright ${new Date().getFullYear()} GearMeshing-AI Project. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

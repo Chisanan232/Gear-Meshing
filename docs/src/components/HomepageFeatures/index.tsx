@@ -15,8 +15,8 @@ const FeatureList: FeatureItem[] = [
     image: require('@site/static/img/GearMeshing-AI_logo.png').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        GearMeshing-AI was designed from the ground up to be easily installed and
+        used to get your AI-powered development system up and running quickly.
       </>
     ),
   },
@@ -25,18 +25,18 @@ const FeatureList: FeatureItem[] = [
     image: require('@site/static/img/GearMeshing-AI_logo.png').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        GearMeshing-AI lets you focus on your code, and we&apos;ll do the chores. Go
+        ahead and integrate the AI agents into your workflow.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Powered by AI',
     image: require('@site/static/img/GearMeshing-AI_logo.png').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Extend or customize your development process with AI assistance. GearMeshing-AI can
+        be extended while maintaining the same intuitive interface.
       </>
     ),
   },

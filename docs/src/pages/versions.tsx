@@ -43,10 +43,10 @@ export default function VersionsPage() {
   return (
     <Layout
       title="Versions"
-      description="Engineering AI Agent Documentation Versions">
+      description="GearMeshing-AI Documentation Versions">
       <main className="container margin-vert--lg">
         <Heading as="h1">
-          Engineering AI Agent Documentation Versions
+          GearMeshing-AI Documentation Versions
         </Heading>
 
         <div className="margin-bottom--lg">
