@@ -46,4 +46,4 @@ The system seamlessly connects with:
 
 ## Getting Started
 
-To get started with Engineering AI Agent, proceed to our [Getting Started](getting-started) guide.
+To get started with Engineering AI Agent, proceed to our [Getting Started](getting-started.md) guide.

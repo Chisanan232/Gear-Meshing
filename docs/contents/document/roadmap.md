@@ -173,4 +173,4 @@ We encourage community involvement in shaping the product roadmap:
 - Contribute to feature specifications and designs
 - Provide feedback on experimental features
 
-For more information on how to contribute, please see our [Contributing Guide](contributing).
+For more information on how to contribute, please see our [Contributing Guide](contributing.md).

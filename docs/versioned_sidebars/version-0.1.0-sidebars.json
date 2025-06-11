@@ -1,50 +1,50 @@
 {
   "docs": [
-    "intro",
-    "getting-started",
+    "document/intro",
+    "document/getting-started",
     {
       "type": "category",
       "label": "Agent Roles",
       "collapsed": false,
       "items": [
-        "roles/rd",
-        "roles/qa",
-        "roles/pm",
-        "roles/sa",
-        "roles/sd",
-        "roles/sre"
+        "document/roles/rd",
+        "document/roles/qa",
+        "document/roles/pm",
+        "document/roles/sa",
+        "document/roles/sd",
+        "document/roles/sre"
       ]
     },
     {
       "type": "category",
       "label": "Integrations",
       "items": [
-        "integrations/slack",
-        "integrations/github",
-        "integrations/jira",
-        "integrations/clickup"
+        "document/integrations/slack",
+        "document/integrations/github",
+        "document/integrations/jira",
+        "document/integrations/clickup"
       ]
     },
     {
       "type": "category",
       "label": "Workflows",
       "items": [
-        "workflows/requirements",
-        "workflows/development",
-        "workflows/testing",
-        "workflows/deployment"
+        "document/workflows/requirements",
+        "document/workflows/development",
+        "document/workflows/testing",
+        "document/workflows/deployment"
       ]
     },
     {
       "type": "category",
       "label": "API Reference",
       "items": [
-        "api/overview",
-        "api/endpoints"
+        "document/api/overview",
+        "document/api/endpoints"
       ]
     },
-    "roadmap",
-    "contributing"
+    "document/roadmap",
+    "document/contributing"
   ],
   "development": [
     "development/overview/index",
