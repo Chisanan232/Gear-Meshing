@@ -58,7 +58,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Cache Docusaurus build cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: docusaurus-cache
         with:
           path: ./docs/.docusaurus
