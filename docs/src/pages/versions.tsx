@@ -26,14 +26,14 @@ export default function VersionsPage() {
       name: 'current',
       label: 'Next',
       // Current version is at root with document subfolder
-      path: `${baseUrl}document/intro`,
+      path: `${baseUrl}next/document/intro`,
       isLast: false,
     },
     {
       name: '0.1.0',
       label: '0.1.0',
       // In Docusaurus, versions are accessible by just their version name followed by document path
-      path: `${baseUrl}0.1.0/document/intro`,
+      path: `${baseUrl}document/intro`,
       isLast: true,
     },
   ];

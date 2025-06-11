@@ -55,15 +55,18 @@ const config: Config = {
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
           include: ['**/*.{md,mdx}'],
-          lastVersion: 'current',
+          lastVersion: '0.1.0',
           onlyIncludeVersions: ['current', '0.1.0'],
           versions: {
             current: {
               label: 'Next',
+              // banner: 'unreleased',
+              badge: false,
             },
             '0.1.0': {
               label: '0.1.0',
-              banner: 'none',
+              // banner: 'none',
+              badge: false,
             },
           },
         },
