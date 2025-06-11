@@ -44,7 +44,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          path: 'docs',
+          path: 'contents',
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/Chisanan232/GearMeshing-AI/tree/master/docs/',

@@ -18,6 +18,7 @@ function Version({name, label, path, isLast}) {
 
 export default function VersionsPage() {
   const {siteConfig} = useDocusaurusContext();
+  const {baseUrl} = siteConfig;
   
   // Paths reflect the routing structure with routeBasePath: '/'
   const versions = [
@@ -25,14 +26,14 @@ export default function VersionsPage() {
       name: 'current',
       label: 'Next',
       // Current version is at root
-      path: '/intro',
+      path: `${baseUrl}intro`,
       isLast: false,
     },
     {
       name: '0.1.0',
       label: '0.1.0',
       // In Docusaurus, versions are accessible by just their version name
-      path: '/0.1.0/intro',
+      path: `${baseUrl}0.1.0/intro`,
       isLast: true,
     },
   ];
