@@ -53,6 +53,7 @@ const config: Config = {
           rehypePlugins: [],
           beforeDefaultRemarkPlugins: [],
           showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
           include: ['**/*.{md,mdx}'],
           lastVersion: 'current',
           onlyIncludeVersions: ['current', '0.1.0'],
