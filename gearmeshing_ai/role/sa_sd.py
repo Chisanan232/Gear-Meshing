@@ -74,8 +74,8 @@ def extract_json_from_response(response: str) -> str:
     # If no markdown formatting, return the original response
     return response.strip()
 
-# ---------- Kick-off ----------
-if __name__ == "__main__":
+
+def main() -> None:
     try:
         raw_need = (
             "We need a mobile app that lets motorcycle riders track every gear shift, "
@@ -85,27 +85,32 @@ if __name__ == "__main__":
 
         # Use simple direct chat - most reliable approach
         response = analyst.generate_reply(messages=[{"role": "user", "content": raw_need}])
-        
+
         print("\n=== Structured Requirement ===\n")
         print(response)
-        
+
         # Extract JSON and parse it
         try:
             # Clean response by removing markdown formatting if present
             cleaned_response = extract_json_from_response(response)
             json_data = json.loads(cleaned_response)
             print("\n=== JSON Parsed Successfully ===")
-            
+
             # Save the structured requirement to a file
             output_file = WORKSPACE / "requirement_doc.json"
             with open(output_file, "w") as f:
                 json.dump(json_data, f, indent=2)
             print(f"\n=== JSON saved to {output_file} ===")
-            
+
         except json.JSONDecodeError as e:
             print(f"\n=== WARNING: JSON Parse Error: {e} ===")
             print("Raw cleaned response:", cleaned_response)
-        
+
     except Exception as e:
         print(f"[ERROR] An error occurred: {str(e)}")
         sys.exit(1)
+
+
+# ---------- Kick-off ----------
+if __name__ == "__main__":
+    main()
