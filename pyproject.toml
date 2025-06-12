@@ -28,7 +28,11 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
 ]
-dependencies = []
+dependencies = [
+    "autogenstudio>=0.4.2.2",
+    "pyautogen>=0.2.19",
+    "python-dotenv>=1.0.0",
+]
 
 [project.urls]
 Homepage = "https://chisanan232.github.io/GearMeshing-AI/"
