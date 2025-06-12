@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
 
 # ------- 常量設定 -------
-ROOT_DIR: Final[pathlib.Path] = pathlib.Path(__file__).parent.resolve()
+ROOT_DIR: Final[pathlib.Path] = pathlib.Path("./")
 print(f"[DEBUG] ROOT_DIR: {ROOT_DIR}")
-WORKSPACE: Final[pathlib.Path] = ROOT_DIR / "workspace"
+WORKSPACE: Final[pathlib.Path] = ROOT_DIR / "test" / "workspace"
 print(f"[DEBUG] WORKSPACE: {WORKSPACE}")
 WORKSPACE.mkdir(exist_ok=True)
 
@@ -19,6 +19,8 @@ load_dotenv(ROOT_DIR / ".env")
 
 # 設置超時時間（秒）
 TIMEOUT = 60
+# Set the rounds of having conversation.
+MAX_TURNS = 5
 
 # ------- LLM 配置 -------
 LLM_CONFIG = {
@@ -84,7 +86,7 @@ if __name__ == "__main__":
 3. 執行單元測試，確保所有測試都通過
 
 請直接開始解決這個任務，不需要詳細解釋你要如何處理。重點是用程式碼解決問題，並確保檔案被實際建立和儲存。""",
-            max_turns=5  # 限制對話輪數，避免無限循環
+            max_turns=MAX_TURNS  # 限制對話輪數，避免無限循環
         )
         
     except Exception as e:
