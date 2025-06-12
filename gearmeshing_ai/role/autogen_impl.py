@@ -64,34 +64,38 @@ user_proxy = UserProxyAgent(
     """,
 )
 
-# ------- 啟動對話 -------
-if __name__ == "__main__":
+def main() -> None:
     print("[INFO] 啟動 AI 代理來解決程式設計任務...")
-    
+
     start_time = time.time()
-    
+
     try:
         # 開始對話，讓 AI 自行解決問題
         user_proxy.initiate_chat(
             assistant,
             message="""我需要一個簡單的階乘函數和它的單元測試。請幫我：
 
-1. 建立名為 math_utils.py 的檔案，實作一個 factorial 函數，可計算非負整數的階乘
-   - 請包含適當的型別註解和文件字串
-   - 記得處理邊界情況和錯誤輸入
+    1. 建立名為 math_utils.py 的檔案，實作一個 factorial 函數，可計算非負整數的階乘
+       - 請包含適當的型別註解和文件字串
+       - 記得處理邊界情況和錯誤輸入
 
-2. 建立名為 test_math_utils.py 的檔案，使用 unittest 模組編寫完整的單元測試
-   - 請測試各種案例，包括邊界情況
+    2. 建立名為 test_math_utils.py 的檔案，使用 unittest 模組編寫完整的單元測試
+       - 請測試各種案例，包括邊界情況
 
-3. 執行單元測試，確保所有測試都通過
+    3. 執行單元測試，確保所有測試都通過
 
-請直接開始解決這個任務，不需要詳細解釋你要如何處理。重點是用程式碼解決問題，並確保檔案被實際建立和儲存。""",
+    請直接開始解決這個任務，不需要詳細解釋你要如何處理。重點是用程式碼解決問題，並確保檔案被實際建立和儲存。""",
             max_turns=MAX_TURNS  # 限制對話輪數，避免無限循環
         )
-        
+
     except Exception as e:
         print(f"[ERROR] 執行過程出錯: {e}")
     finally:
         # 顯示總執行時間
         elapsed_time = time.time() - start_time
         print(f"[INFO] 總執行時間: {elapsed_time:.2f} 秒")
+
+
+# ------- 啟動對話 -------
+if __name__ == "__main__":
+    main()
